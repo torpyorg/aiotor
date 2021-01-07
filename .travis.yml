@@ -1,0 +1,13 @@
+dist: xenial
+language: python
+python:
+  - "3.7"
+  - "3.8"
+  - "3.9"
+sudo: false
+install:
+  - pip install tox-travis coveralls
+script:
+  - tox -v
+after_success:
+  - cd tests && coveralls
